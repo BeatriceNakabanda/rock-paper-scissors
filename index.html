@@ -1,38 +1,57 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Rock Paper Scissors</title>
-
-	<script>
-		computerPlay = function(userPlay){
-			//server always chooses rock
-			if (userPlay=='rock'){
-				result ="tie";
-			}
-			if (userPlay=='paper') {
-				result = "win";
-			}
-			if (userPlay=='scissors'){
-				result = "lose";
-			}
-			alert("You" + result + "!");
-		}
-	</script>
-
+    <title>Rock,Paper,Scissor</title>
+    <script type="text/javascript">
+        var playerSelection = prompt("Do you choose rock, paper or scissors?");
+        var computerSelection  = Math.random();
+        if (computerSelection  < 0.34) {
+            computerSelection  = "rock";
+        } else if(computerSelection  <= 0.67) {
+            computerSelection  = "paper";
+        } else {
+            computerSelection  = "scissors";
+        } console.log("Computer: " + computerSelection );
+        var playRound = function(selection1, selection2) {
+            if(selection1 === selection2) {
+                return "The result is a tie!";
+            }else if(selection1 ==="rock")
+            {
+                if(selection2 === "scissors")
+                {
+                    return "rock wins";
+                }else
+                {
+                    return "paper wins";
+                }
+            }else if(selection1 ==="paper")
+            {
+                if(selection2 === "rock")
+                {
+                    return "paper wins";
+                }else
+                {
+                    return "scissors wins";
+                }
+            }else if(selection1 ==="scissors")
+            {
+                if(selection2 === "rock")
+                {
+                    return "rock wins";
+                }else
+                {
+                    return "scissors wins";
+                }
+            }else
+            {
+                 return "incorrect input";
+            }
+        };
+        alert(playRound(playerSelection,computerSelection ));
+        
+    </script>
 </head>
+<body>
 
-<body style="text-align: center; padding-top: 140px; background-color: #D8D8D8; " >
-
-	<h1>Rock Paper Scissor game</h1><br>
-
-	<h2>Select One</h2><br>
-
-	<button type="button" onclick="computerPlay('rock')">ROCK</button> 
-
-	<button type="button" onclick="computerPlay('paper')">PAPER</button> 
-
-	<button type="button" onclick="computerPlay('scissors')">SCISSOR</button>
-
-  
 </body>
-
 </html>
