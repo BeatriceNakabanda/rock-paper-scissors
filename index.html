@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Rock Paper Scissors</title>
+
+	<script>
+		computerPlay = function(userPlay){
+			//server always chooses rock
+			if (userPlay=='rock'){
+				result ="tie";
+			}
+			if (userPlay=='paper') {
+				result = "win";
+			}
+			if (userPlay=='scissors'){
+				result = "lose";
+			}
+			alert("You" + result + "!");
+		}
+	</script>
+
+</head>
+
+<body style="text-align: center; padding-top: 140px; background-color: #D8D8D8; " >
+
+	<h1>Rock Paper Scissor game</h1><br>
+
+	<h2>Select One</h2><br>
+
+	<button type="button" onclick="computerPlay('rock')">ROCK</button> 
+
+	<button type="button" onclick="computerPlay('paper')">PAPER</button> 
+
+	<button type="button" onclick="computerPlay('scissors')">SCISSOR</button>
+
+  
+</body>
+
+</html>
